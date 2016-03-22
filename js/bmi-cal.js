@@ -27,10 +27,16 @@ $(function(){
   });
 
   $(".temp").click(function(){
-    alert("Convert from Farenheit to Cesius.")
+    alert("We're going to convert from Farenheit to Cesius.")
   });
 
+  $(".cook").click(function(){
+    alert("We're going to convert Cooking Measurements.")
+  });
 
+  $(".math").click(function(){
+    alert("We're going to use a Basic Calculator.")
+  });
 
 heightAndWeight();
 });
