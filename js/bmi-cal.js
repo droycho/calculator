@@ -1,28 +1,36 @@
 $(function(){
+  var weight;
+  var height;
+
+  var bmi = function(weight, height) {
+    var convertedWeight = weight*0.45;
+    var convertedHeight = height*0.025;
+    return ( convertedWeight/(Math.pow(convertedHeight,2)) );
+  };
+
+  var heightAndWeight= function() {
+    weight= parseInt(prompt("what is your weight?"));
+    height= parseInt(prompt("what is your height?"));
+    alert("Your Body Mass Index is " + bmi(weight, height) + "%.");
+  };
+
   $("h1").click(function(){
     alert("This is a standard header.");
   });
+
   $("p").click(function(){
     alert("This is a filler paragraph full of 'Loerm ipsum,' which is a made up language used to fill space.");
   });
-  $("h2").click(function(){
+
+  $(".bmi").click(function(){
     alert("We're going to calculate your Body Mass Index.")
   });
-});
 
-var weight;
-var height;
+  $(".temp").click(function(){
+    alert("Convert from Farenheit to Cesius.")
+  });
 
-var bmi = function(weight, height) {
-var convertedWeight = weight*0.45;
-var convertedHeight = height*0.025;
-return ( convertedWeight/(Math.pow(convertedHeight,2)) );
-};
 
-var heightAndWeight= function() {
-weight= parseInt(prompt("what is your weight?"));
-height= parseInt(prompt("what is your height?"));
-alert("Your Body Mass Index is " + bmi(weight, height) + "%.");
-};
 
 heightAndWeight();
+});
