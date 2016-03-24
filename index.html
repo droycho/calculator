@@ -1,87 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-1.12.2.js"></script>
-    <script src="js/calculator.js" charset="utf-8"></script>
-    <!-- <script src="js/scripts.js"></script> -->
-    <!-- <script src="js/temp-calc.js" charset="utf-8"></script> -->
-    <!-- <script src="js/cookingconversions.js" charset="utf-8"></script> -->
-    <title>Conversions</title>
-    <h1>Conversion Chart</h1>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel ="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Basic Calculator</title>
   </head>
   <body>
-    <h2 class="bmi">BMI Calculator</h2>
-      <p>
-        This button will create a series of pop-up windows that will allow the user to calculate their Body Mass Index (BMI) by entering their height (in) and wieght(pounds). JavaScript will run a promt when the user clicks the button above that will ask the user for their weight and multiply it by 0.45. Then it will ask the user to enter their height and multiply by 0.025. The last window will display the final result when the resulting weight value is divided by the resulting height value squared (weight/height^2). This is the the users BMI.
-      </p>
-      <h2 class="temp">Temperature Calculator</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      <h2 class="cook">Cooking Conversion Calculator</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      <div class="container">
-        <h2 class="math">Basic Math Calculator</h2>
-          <form id="add">
-            <div class="form-group">
-              <label for="add1">1st number:</label>
-              <input id="add1" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-              <label for="add2">2nd number:</label>
-              <input id="add2" class="form-control" type="text">
-            </div>
-            <button type="submit" class="btn">Add!</button>
-          </form>
-          <div id="outputadd">
-
+    <div class="container">
+      <h1>Basic Calculator</h1>
+      <form id="calculator">
+        <div class="form-group">
+          <label for="input1">1st Number</label>
+          <input id="input1" class="form-control" type="number">
+        </div>
+        <div class="form-group">
+          <label for="input2">2nd Number</label>
+          <input id="input2" class="form-control" type="number">
+        </div>
+        <div class="radio">
+            <label>
+              <input type="radio" name="operator" value="add" checked>
+              add
+            </label>
           </div>
-          <form id="subtract">
-            <div class="form-group">
-              <label for="subtract1">1st number:</label>
-              <input id="subtract1" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-              <label for="subtract2">2nd number:</label>
-              <input id="subtract2" class="form-control" type="text">
-            </div>
-            <button type="submit" class="btn">Subtract!</button>
-          </form>
-          <div id="outputsubtract">
-
+          <div class="radio">
+            <label>
+              <input type="radio" name="operator" value="subtract">
+              subtract
+            </label>
           </div>
-          <form id="multiply">
-            <div class="form-group">
-              <label for="multiply1">1st number:</label>
-              <input id="multiply1" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-              <label for="multiply2">2nd number:</label>
-              <input id="multiply2" class="form-control" type="text">
-            </div>
-            <button type="submit" class="btn">Multiply!</button>
-          </form>
-          <div id="outputmultiply">
-
+          <div class="radio">
+            <label>
+              <input type="radio" name="operator" value="multiply">
+              multiply
+            </label>
           </div>
-          <form id="divide">
-            <div class="form-group">
-              <label for="divide1">1st number:</label>
-              <input id="divide1" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-              <label for="divide2">2nd number:</label>
-              <input id="divide2" class="form-control" type="text">
-            </div>
-            <button type="submit" class="btn">Divide!</button>
-          </form>
-          <div id="outputdivide">
-
+          <div class="radio">
+            <label>
+              <input type="radio" name="operator" value="divide">
+              divide
+            </label>
           </div>
+          <button type="submit" class="btn">Go!</button>
+      </form>
+      <div id="output">
+
       </div>
+  </div>
+
+    <script src="js/scripts.js"></script>
   </body>
-</html>
+  </html>

@@ -1,42 +1,39 @@
-$(function(){
-  var weight;
-  var height;
+var add = function(number1, number2) {
+  return number1 + number2;
+};
 
-  var bmi = function(weight, height) {
-    var convertedWeight = weight*0.45;
-    var convertedHeight = height*0.025;
-    return ( convertedWeight/(Math.pow(convertedHeight,2)) );
-  };
 
-  var heightAndWeight= function() {
-    weight= parseInt(prompt("what is your weight?"));
-    height= parseInt(prompt("what is your height?"));
-    alert("Your Body Mass Index is " + bmi(weight, height) + "%.");
-  };
+var subtract = function(number1, number2) {
+  return number1 - number2;
+};
 
-  $("h1").click(function(){
-    alert("This is a standard header.");
+
+var multiply = function(number1, number2) {
+  return number1 * number2;
+};
+
+
+var divide = function(number1, number2) {
+  return number1/number2;
+};
+
+
+$(function() {
+  $("form#calculator").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#input1").val());
+    var number2 = parseInt($("#input2").val());
+    var operator = $("input:radio[name=operator]:checked").val();
+    var result;
+    if (operator === "add") {
+      result = add(number1, number2);
+    } else if (operator === "subtract") {
+      result = subtract(number1, number2);
+    } else if (operator === "multiply") {
+      result = multiply(number1, number2);
+    } else if (operator === "divide") {
+      result = divide(number1, number2);
+    }
+    $("#output").text(result);
   });
-
-  $("p").click(function(){
-    alert("This is a filler paragraph full of 'Loerm ipsum,' which is a made up language used to fill space.");
-  });
-
-  $(".bmi").click(function(){
-    alert("We're going to calculate your Body Mass Index.")
-  });
-
-  $(".temp").click(function(){
-    alert("We're going to convert from Farenheit to Cesius.")
-  });
-
-  $(".cook").click(function(){
-    alert("We're going to convert Cooking Measurements.")
-  });
-
-  $(".math").click(function(){
-    alert("We're going to use a Basic Calculator.")
-  });
-
-heightAndWeight();
 });
